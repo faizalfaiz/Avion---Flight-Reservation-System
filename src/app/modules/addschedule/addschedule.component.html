@@ -1,0 +1,73 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-body">
+                    <form (ngSubmit)="addNew()" name="addSchedule" #addSchedule="ngForm">
+                      <div class="panel panel-primary">
+                          <div class="card-header">
+                              <h3 class="card-title">Add Schedule</h3>
+                          </div>
+
+          <div class="form-group" [class.has-error]="scheduleId.invalid && scheduleId.touched">
+              <label for="schId">Schedule Id</label>
+              <input type="text" class="form-control" name="scheduleId" [(ngModel)]="schedule.scheduleId" #scheduleId="ngModel" required pattern="^[S][0-9]{1,3}" />
+              <span style="color: rgb(250, 53, 53)" *ngIf="scheduleId.errors?.required && scheduleId.touched">
+        Field is Mandatory
+      </span>
+              <span style="color: rgb(250, 53, 53)" *ngIf="scheduleId.errors?.pattern && scheduleId.touched">
+        Field Must begin with 'S'
+      </span>
+          </div>
+          <div class="form-group" [class.has-error]="depDate.invalid && depDate.touched">
+              <label for="depDate">Departure Date</label>
+              <input type="date" class="form-control" [min]="minDate" name="depDate" [(ngModel)]="schedule.depDate" #depDate="ngModel" required />
+              <span style="color: rgb(250, 53, 53)" *ngIf="depDate.errors?.required && depDate.touched">
+        Field is Mandatory
+      </span>
+          </div>
+          <div class="form-group" [class.has-error]="depTime.invalid && depTime.touched">
+              <label for="depTime">Departure Time</label>
+              <input type="text" class="form-control" name="depTime" [(ngModel)]="schedule.depTime" #depTime="ngModel" required />
+              <span style="color: rgb(250, 53, 53)" *ngIf="depTime.errors?.required && depTime.touched">
+        Field is Mandatory
+      </span>
+          </div>
+          <div class="form-group" [class.has-error]="arrDate.invalid && arrDate.touched">
+              <label for="arrDate">Arrival Date</label>
+              <input type="date" class="form-control" [min]="minDate" name="arrDate" [(ngModel)]="schedule.arrDate" #arrDate="ngModel" required />
+              <span style="color: rgb(250, 53, 53)" *ngIf="arrDate.errors?.required && arrDate.touched">
+        Field is Mandatory
+      </span>
+          </div>
+          <div class="form-group" [class.has-error]="arrTime.invalid && arrTime.touched">
+              <label for="arrTime">Arrival Time</label>
+              <input type="text" class="form-control" name="arrTime" [(ngModel)]="schedule.arrTime" #arrTime="ngModel" required />
+              <span style="color: rgb(250, 53, 53)" *ngIf="arrTime.errors?.required && arrTime.touched">
+        Field is Mandatory
+      </span>
+          </div>
+          <div class="form-group" [class.has-error]="fId.invalid && fId.touched">
+              <label for="fId">Flight Id</label>
+              <input type="text" class="form-control" name="fId" [(ngModel)]="schedule.flightId" #fId="ngModel" required pattern="^[F][0-9]{1,3}" />
+              <span style="color: rgb(250, 53, 53)" *ngIf="fId.errors?.required && fId.touched">
+        Field is Mandatory
+      </span>
+              <span style="color: rgb(250, 53, 53)" *ngIf="fId.errors?.pattern && fId.touched">
+        Field should begin with F
+      </span>
+          </div>
+      </div>
+      <div class="panel-footer">
+          <button class="btn btn-primary" type="Submit" [disabled]="addSchedule.invalid">
+      Add !
+    </button>
+      </div>
+
+</form>
+</div>
+</div>
+</div>
+
+

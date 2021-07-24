@@ -1,0 +1,36 @@
+
+
+
+  .mat-sidenav.md-sidenav-opened {
+    box-shadow: 0 0 0 0 !important;
+
+  }
+
+.mat-headline {
+  text-align: center;
+  background: -webkit-linear-gradient(rgb(92, 234, 253), rgb(3, 159, 250));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  padding-bottom: 15px;
+
+
+
+}
+.mat-list-item {
+  font-family:  'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  color: rgb(181, 182, 182);
+
+
+}
+
+.mat-icon
+{
+  color:rgb(86, 215, 255);
+  padding-right: 45px;
+  padding-left: 75px;
+
+}
+
+

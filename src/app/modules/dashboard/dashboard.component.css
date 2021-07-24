@@ -1,0 +1,41 @@
+
+  .mat-card {
+    overflow: hidden;
+    height: 120px;
+  }
+
+
+table {
+  width: 100%;
+}
+.material-card {
+  max-width: 400px;
+  max-height: 120px;
+
+
+}
+.mat-success {
+  background-color: hsl(187, 91%, 58%);
+  color: #fff;
+  width:'40px';
+}
+.mat-icon
+{
+  font-size: 40px;
+  size: 500px;
+  padding-left: 60px;
+  padding-top: 15px;
+}
+.mat-card-title{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 023px;
+  padding-top: 10px;
+}
+.app-widget-pie
+{
+color: rgb(55, 251, 251);
+}
+.material-icons
+{
+  color: rgb(129, 251, 251);
+}

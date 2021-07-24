@@ -1,0 +1,30 @@
+
+.table{
+  width: 100;
+}
+
+.mat-column-routeId {
+   width: 5% !important;
+ }
+
+ .mat-column-source {
+   width: 5% !important;
+
+ }
+ .mat-column-destination {
+ width: 5% !important;
+ }
+
+ .mat-column-scheduleId {
+  width: 5% !important;
+ }
+
+ .mat-column-action {
+   width: 5% !important;
+ }
+
+.mat-success {
+  background-color: hsl(187, 91%, 58%);
+  color: #fff;
+  width:'40px';
+}

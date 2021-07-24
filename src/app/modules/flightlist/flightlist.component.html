@@ -1,0 +1,41 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header ">
+                      <h4 class="card-title ">FlightList</h4>
+
+                  </div>
+                  <div class="card-body">
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th>Flight ID</th>
+                  <th>Flight Name</th>
+                  <th>Seating Capacity</th>
+                  <th>Booking Capacity</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let f of flights; let i=index;">
+                  <td>{{f.flightid}}</td>
+                  <td>{{f.flightname}}</td>
+                  <td>{{f.seatingCapacity}}</td>
+                  <td>{{f.bookingCapacity}}</td>
+                  <!-- <td><button (click)="deleteFlight(f.flightId)" class="btn btn-danger">Delete</button>-->
+                  <td>
+                      <!--<a class='btn btn-primary' (click)='editFlight()'>Update</a>&nbsp;-->
+                      <!-- <a class='btn btn-primary'>Update</a>&nbsp; -->
+                      <a class='btn btn-danger' (click)='deleteFlight(i)'>Delete</a>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+<br>
+<button type="button" class='btn btn-primary' (click)='addFlight()'>Add new Flight</button>
+
+

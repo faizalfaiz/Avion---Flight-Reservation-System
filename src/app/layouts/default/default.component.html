@@ -1,0 +1,11 @@
+<app-header ></app-header>
+<mat-drawer-container>
+ <mat-drawer [disableClose]="true" class="sidenav" mode="side" opened #sidenav> 
+<app-sidebar></app-sidebar>
+</mat-drawer>
+<mat-drawer-content>
+<br><br><br><br>
+<router-outlet></router-outlet>
+</mat-drawer-content>
+</mat-drawer-container>
+

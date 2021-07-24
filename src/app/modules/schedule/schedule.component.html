@@ -1,0 +1,40 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" [hidden]="showTable">
+                    <div class="card-header ">
+                        <h4 class="card-title ">Schedule</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Schedule Id</th>
+                                    <th>Departure Date</th>
+                                    <th>Departure Time</th>
+                                    <th>Arrival Date</th>
+                                    <th>Arrival Time</th>
+                                    <th>Flight Id</th>
+                                </tr>
+                            </thead>
+                            <tr *ngFor="let s of schedule; let i = index">
+                                <td>{{ s.scheduleId }}</td>
+                                <td>{{ s.depDate | date:'shortDate' }}</td>
+                                <td>{{ s.depTime }}</td>
+                                <td>{{ s.arrDate | date:'shortDate' }}</td>
+                                <td>{{ s.arrTime }}</td>
+                                <td>{{ s.flightId }}</td>
+                                <td class="button">
+                                    <a class="btn btn-danger" [hidden]="showButton" (click)="deleteSchedule(i)">Delete</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br>
+                    <button type="button" class='btn btn-primary' (click)="addSchedule()">Add Schedule</button>
+                </div>
+                <div [hidden]="showForm">
+                    <app-addschedule></app-addschedule>
+                </div>
+            </div>

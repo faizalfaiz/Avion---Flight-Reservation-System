@@ -1,0 +1,53 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header ">
+                        <h4 class="card-title ">Routes</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="container text-center">
+                            <br>
+                            <table mat-table [dataSource]="flightRoutes" #mytable class="my-table mat-elevation-z8">
+
+                                <ng-container matColumnDef="routeId">
+                                    <th mat-header-cell *matHeaderCellDef>Route ID. </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.routeId}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="source">
+                                    <th mat-header-cell *matHeaderCellDef>Source</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.source}} </td>
+                                </ng-container>
+
+
+                                <ng-container matColumnDef="destination">
+                                    <th mat-header-cell *matHeaderCellDef>destination</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.destination}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="scheduleId">
+                                    <th mat-header-cell *matHeaderCellDef>scheduleId</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.scheduleId.scheduleId}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="action">
+                                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                                    <td mat-cell *matCellDef="let element" class="action-link">
+                                        <a mat-raised-button color="success" (click)="openDialog('Update', element)">Edit</a> &nbsp;
+                                        <a mat-raised-button color="success" (click)="openDialog('Delete',element)">Delete</a>
+                                        <button (click)="generatePdf()">Open PDF</button>
+
+                                      </td>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+                            <mat-paginator [pageSizeOptions]="[ 10, 20]"></mat-paginator>
+                        </div>
+                        <br> &nbsp;&nbsp;&nbsp;
+                        <a mat-raised-button color="success" (click)="openDialog('Add',{})">Add Route</a>
+                    </div>
+                </div><br>

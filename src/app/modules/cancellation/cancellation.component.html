@@ -1,0 +1,34 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header ">
+            <h4 class="card-title ">Cancellation Requests</h4>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Ticket Id</th>
+                  <th>Email</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let c of cancelrequest; trackBy: trackByTicketid ; let i= index">
+                  <tr>
+                    <td>{{c.ticketID}}</td>
+                    <td>{{c.email}}</td>
+                    <td>
+                      <a mat-raised-button color="success" (click)='ApproveRe(c.ticketID)'>Approve</a>
+                    </td>
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+<br/>

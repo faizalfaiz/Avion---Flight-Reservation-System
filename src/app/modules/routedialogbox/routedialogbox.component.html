@@ -1,0 +1,47 @@
+<h1 mat-dialog-title> <strong>{{action}} Route</strong></h1>
+<div mat-dialog-content>
+
+  <form novalidate (ngSubmit)="onSubmit()" [formGroup]="routeForm" role="form">
+
+    <div *ngIf="action === 'Delete'">
+      Are you sure you want to delete this item?<br /><br />
+    </div>
+
+    <div *ngIf="action !== 'Delete'">
+      <mat-form-field class="form-fields">
+        <input type="text" formControlName="routeId" matInput placeholder="Route ID" [readonly]="action == 'Update'">
+        <mat-error>
+          {{errors.routeid}}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-fields">
+        <input type="text" formControlName="source" matInput placeholder="Source">
+        <mat-error>
+          {{errors.source}}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-fields">
+        <input type="text" formControlName="destination" matInput placeholder="Destinaton">
+        <mat-error>
+          {{errors.destination}}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-fields" >
+      <mat-select class="form-fields" formControlName="scheduleId" placeholder="Schedule Id"  appearance="fill">
+
+        <!--<input type="text" formControlName="scheduleId" matInput placeholder="">-->
+        <mat-option value="0" selected>--Select---</mat-option>
+            <mat-option *ngFor="let s of schedule" [value]="s.scheduleId">{{s.scheduleId}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    </div>
+
+    <div class="button-row">
+      <button mat-button type="button" (click)="closeDialog()">Cancel</button>
+      <button mat-raised-button type="submit"[disabled]="routeForm.invalid">{{action}}</button>
+      
+    </div>
+
+  </form>
+</div>
+

@@ -1,0 +1,46 @@
+
+
+.table {
+  width: 100%;
+}
+
+.mat-success {
+  background-color: hsl(187, 91%, 58%);
+  color: #fff;
+  width:'40px';
+}
+.mat-paginator
+{
+  color: rgb(121, 121, 121);
+}
+::ng-deep .mat-select-arrow {
+  color: #4fc6e4;
+}
+::ng-deep .mat-select-value {
+  color: #58dff1;
+}
+::ng-deep .mat-option{
+  color: #58dff1;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  color: #58dff1;
+}
+
+::ng-deep .mat-form-field-underline{
+  color:rgb(145, 243, 250);
+}
+
+::ng-deep .mat-form-field-placeholder{
+  color:rgb(92, 217, 255)!important;
+}
+
+::ng-deep .mat-form-field-label .mat-form-field-ripple{
+  color:rgb(96, 226, 251) !important;
+}
+
+
+::ng-deep .mat-form-field-underline .mat-form-field-ripple{
+  background-color:rgb(96, 226, 251) !important;
+}
+

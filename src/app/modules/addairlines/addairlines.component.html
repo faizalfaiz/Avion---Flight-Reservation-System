@@ -1,0 +1,41 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-body">
+                  <form (ngSubmit)="saveAirlines()" name="addAirlinesForm" #AirlinesForm="ngForm">
+                      <div class="panel panel-primary">
+                          <div class="card-header">
+                              <h3 class="card-title">Add Airlines</h3>
+                          </div>
+                              <div class="form-group" [class.has-error]="airlinesId.invalid && airlinesId.touched">
+                                  <label for="airlinesId">Airlines ID</label>
+                                  <input type="text" class="form-control" name="airlinesId" [(ngModel)]="airlines.airlineId" required pattern="^[A][L][0-9]{3}" #airlinesId="ngModel" />
+                                  <span class="alert-danger " *ngIf="airlinesId.errors?.required && airlinesId.touched">
+                                  Airlines ID is Mandatory
+                                  </span>
+                                  <span class="alert-danger " *ngIf="airlinesId.errors?.pattern && airlinesId.touched">
+                                  Airlines ID is invalid
+                                  </span>
+                              </div>
+                              <div class=" form-group" [class.has-error]="airlinesName.invalid && airlinesName.touched">
+                                  <label for="Empname" class="control-label ">Airlines Name</label>
+                                  <input type="text " class="form-control" name="ename" [(ngModel)]="airlines.airlineName" required pattern="^[A-Za-z]+$" #airlinesName="ngModel" />
+                                  <span class="alert-danger " *ngIf="airlinesName.errors?.required && airlinesName.touched">
+                                  Airlines Name is Mandatory
+                                  </span>
+                                  <span class="alert-danger" *ngIf="airlinesName.errors?.pattern && airlinesName.touched">
+                                  Airlines Name is invalid
+                                  </span>
+                              </div>
+
+
+                      <div class="panel-footer">
+                          <button class="btn btn-primary" type="submit" [disabled]="AirlinesForm.invalid" (click)='saveAirlines()'>Add Airlines</button>
+                    </div>
+                  </div>
+                  </form>
+              </div>
+          </div>
+      </div>

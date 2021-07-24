@@ -1,0 +1,51 @@
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+            <mat-card class="material-card">
+              <mat-card-header>
+                <div mat-card-avatar class="material-header-image"></div>
+                <mat-icon style = "color:#7dd9f8;"  >flight</mat-icon><br>
+                <mat-card-title>{{flightrowrowCount}}</mat-card-title>
+                <mat-card-subtitle>Flights</mat-card-subtitle>
+              </mat-card-header>
+           </mat-card>
+      </div>
+     
+      <div class="col-lg-3 col-md-6 col-sm-6">
+            <mat-card class="material-card">
+              <mat-card-header>
+                <div mat-card-avatar class="material-header-image"></div>
+                <mat-icon style = "color:#7ecee9;">person</mat-icon><br>
+                <mat-card-title>{{passengerrowCount}}</mat-card-title>
+                <mat-card-subtitle>Passengers</mat-card-subtitle>
+              </mat-card-header>
+          </mat-card>
+        </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6">
+            <mat-card class="material-card">
+              <mat-card-header>
+                <div mat-card-avatar class="material-header-image"></div>
+                <mat-icon style = "color:#39C0ED;"  >credit_card</mat-icon><br>
+                <mat-card-title>5</mat-card-title><!-- Sold tickets can be added dynamically during backend integration -->
+                <mat-card-subtitle>Sold Tickets</mat-card-subtitle>
+              </mat-card-header>
+            </mat-card>
+          </div>
+          
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div >
+            <mat-card class="material-card">
+              <mat-card-header>
+                <mat-icon style = "color:#39C0ED;"  >cancel</mat-icon><br>
+                <mat-card-title>{{cancelrequestrowCount}}</mat-card-title>
+                <mat-card-subtitle>Cancel Requests</mat-card-subtitle>
+              </mat-card-header>
+            </mat-card>
+            </div>
+          </div>
+       </div>
+    </div>
+  <br><br><br>&nbsp;&nbsp;
+<app-widget-area [data]="bigChart"></app-widget-area>
+<br><br><br>

@@ -1,0 +1,11 @@
+
+.mat-drawer-container{
+  -moz-box-shadow:    -3px 0 5px 10px #555;
+  -webkit-box-shadow: -3px 0 5px 0 #555;
+  box-shadow:         -3px 0 5px 0 #555;
+}
+.mat-icon
+{
+  color: rgb(98, 205, 255);
+}
+

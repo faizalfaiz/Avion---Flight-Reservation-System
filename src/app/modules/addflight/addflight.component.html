@@ -1,0 +1,62 @@
+
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-body">
+                  <form (ngSubmit)="saveFlight()" name="addFlightForm" #flightForm="ngForm">
+                      <div class="panel panel-primary">
+                          <div class="card-header">
+                              <h3 class="card-title">Add Flight</h3>
+                          </div>
+                              <div class="form-group" [class.has-error]="flightid.invalid && flightid.touched">
+                                  <label for="flightid">Flight ID</label>
+                                  <input type="text" class="form-control" name="empid" [(ngModel)]="flight.flightid" required pattern="^[F][0-9]{1,3}" #flightid="ngModel" />
+                                  <span class="alert-danger " *ngIf="flightid.errors?.required && flightid.touched">
+                                  Flight ID is Mandatory
+                                  </span>
+                                  <span class="alert-danger " *ngIf="flightid.errors?.pattern && flightid.touched">
+                                  Flight ID is invalid
+                                  </span>
+                              </div>
+                              <div class=" form-group" [class.has-error]="flightname.invalid && flightname.touched">
+                                  <label for="Empname" class="control-label ">Flight Name</label>
+                                  <input type="text " class="form-control" name="ename" [(ngModel)]="flight.flightname" required pattern="^[A-Za-z]+$" #flightname="ngModel" />
+                                  <span class="alert-danger " *ngIf="flightname.errors?.required && flightname.touched">
+                                  Flight Name is Mandatory
+                                  </span>
+                                  <span class="alert-danger" *ngIf="flightname.errors?.pattern && flightname.touched">
+                                  Flight Name is invalid
+                                  </span>
+                              </div>
+
+                              <div class="form-group" [class.has-error]="seatingCapacity.invalid && seatingCapacity.touched">
+                                  <label for="seatingCapacity">Seating Capacity</label>
+                                  <input type="text" class="form-control" name="seatingCapacity" [(ngModel)]="flight.seatingCapacity" required pattern="^[0-9]+$" #seatingCapacity="ngModel" />
+                                  <span class="alert-danger " *ngIf="seatingCapacity.errors?.required && seatingCapacity.touched ">
+                              Seating Capacity is Mandatory
+                              </span>
+                              <span class="alert-danger" *ngIf="seatingCapacity.errors?.pattern && seatingCapacity.touched">
+                                  Field must begin with S
+                                  </span>
+                              </div>
+                              <div class="form-group" [class.has-error]="bookingCapacity.invalid && bookingCapacity.touched">
+                                  <label for="bookingCapacity">Booking Capacity</label>
+                                  <input type="text" class="form-control" name="bookingCapacity" [(ngModel)]="flight.bookingCapacity" required pattern="^[0-9]+$" #bookingCapacity="ngModel" />
+                                  <span class="alert-danger " *ngIf="bookingCapacity.errors?.required && bookingCapacity.touched ">
+                              Booking Capacity is Mandatory
+                              </span>
+                              <span class="alert-danger" *ngIf="bookingCapacity.errors?.pattern && bookingCapacity.touched">
+                                  Booking Capacity is invalid
+                                  </span>
+                              </div>
+                          </div>
+                     
+                      <div class="panel-footer">
+                          <button class="btn btn-primary" type="submit" [disabled]="flightForm.invalid" (click)='saveFlight()'>Add Flight</button>
+                    </div>
+                  </form>
+              </div>
+          </div>
+      </div>

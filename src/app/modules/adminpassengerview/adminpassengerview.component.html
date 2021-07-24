@@ -1,0 +1,38 @@
+
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header ">
+                      <h4 class="card-title ">Passengers</h4>
+                  </div>
+                  <div class="card-body">
+
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>age</th>
+                      <th>Gender</th>
+                      <th>Seat No</th>
+                      <th>  TicketID</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let p of passenger;let i index">
+                      <td>{{p.name}}</td>
+                      <td>{{p.age}}</td>
+                      <td>{{p.gender}}</td>
+                      <td>{{p.seatno}}</td>
+                      <td>{{p.ticketID}}</td>
+                      
+                  </tr>
+              </tbody>
+          </table>
+
+      </div>
+  </div>
+</div>
+</div>
+<br/>
